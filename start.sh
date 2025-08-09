@@ -1,10 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 
+# PocketBase binary'ga ruxsat berish
 chmod +x pocketbase/pocketbase
 
-# Avtomatik super admin yaratish (agar mavjud bo'lmasa)
-./pocketbase/pocketbase admin create admin@gmail.com admin12345 || true
+# Har safar ishga tushganda admin qayta yaratiladi
+./pocketbase/pocketbase superuser upsert admin@example.com admin12345
 
-# PocketBase serverini ishga tushirish
+# Serverni ishga tushirish
 ./pocketbase/pocketbase serve --http 0.0.0.0:10000
