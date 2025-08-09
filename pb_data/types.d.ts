@@ -11837,7 +11837,7 @@ namespace core {
  }
  type _svvecbM = Field
  interface fieldWithType extends _svvecbM {
-  type: string
+  type(): string
  }
  interface fieldWithType {
   unmarshalJSON(data: string|Array<number>): void
